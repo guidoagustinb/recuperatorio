@@ -33,6 +33,7 @@ function CrearProducto() {
         });
       alert("Producto creado");
     }
+    document.querySelector("#form-crud").reset();
   };
 
   const {
@@ -124,7 +125,9 @@ function CrearProducto() {
             <option value="3"> Tinker </option>
             <option value="4"> Colors of Nature </option>
           </select>
-          {errors.price && <span>El campo categoría es obligatorio.</span>}
+          {errors.idCategoryFK && (
+            <span>El campo categoría es obligatorio.</span>
+          )}
 
           <input
             type="file"

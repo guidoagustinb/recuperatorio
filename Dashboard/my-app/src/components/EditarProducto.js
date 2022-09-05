@@ -48,8 +48,9 @@ function EditarProducto() {
         .catch((err) => {
           console.error(err);
         });
+      alert("Cambios realizados");
     }
-    alert("Cambios realizados");
+    document.querySelector("#form-crud").reset();
   };
 
   const submitDelete = () => {
@@ -61,6 +62,7 @@ function EditarProducto() {
         console.error(err);
       });
     alert("Producto eliminado");
+    document.querySelector("#form-crud").reset();
   };
 
   return (
