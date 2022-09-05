@@ -44,6 +44,8 @@ function CrearProducto() {
 
   // console.log(errors);
 
+  // modif
+
   // CONST PARA HACER PRUEBAS
   // const onSubmit = (e) => {
   //   console.log(e);
