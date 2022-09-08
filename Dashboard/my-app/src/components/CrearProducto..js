@@ -36,6 +36,10 @@ function CrearProducto() {
     document.querySelector("#form-crud").reset();
   };
 
+  function refreshPage() {
+    window.location.reload();
+  }
+
   const {
     register,
     handleSubmit,
@@ -138,7 +142,13 @@ function CrearProducto() {
             placeholder="image"
             onChange={selectHandler}
           />
-          <button placeholder="Crear" className="btn-crud">
+          <button
+            placeholder="Crear"
+            className="btn-crud"
+            onClick={() => {
+              refreshPage();
+            }}
+          >
             {" "}
             Crear{" "}
           </button>

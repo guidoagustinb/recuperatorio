@@ -3,7 +3,28 @@ import "../assets/css/Styles.css";
 import { useForm } from "react-hook-form";
 
 function EditarProducto() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState,
+    formState: { isSubmitSuccessful },
+    formState: { errors },
+  } = useForm({
+    defaultValues: { name: "", description: "", price: "", idCategoryFK: "" },
+  });
+
+  React.useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ name: "", description: "", price: "", idCategoryFK: "" });
+    }
+  }, [formState, reset]);
+
   const [productos, setProductos] = useState([]);
+
+  function refreshPage() {
+    window.location.reload();
+  }
 
   useEffect(() => {
     fetch("/api/products")
@@ -23,12 +44,6 @@ function EditarProducto() {
   const selectHandler = (e) => {
     setFile(e.target.files[0]);
   };
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
   const formdata = new FormData();
 
@@ -50,7 +65,6 @@ function EditarProducto() {
         });
       alert("Cambios realizados");
     }
-    document.querySelector("#form-crud").reset();
   };
 
   const submitDelete = () => {
@@ -176,7 +190,23 @@ function EditarProducto() {
           <button type="submit" className="btn-crud">
             Editar
           </button>
-          <button type="button" onClick={submitDelete} className="btn-crud">
+          <button
+            type="button"
+            onClick={() => {
+              submitDelete();
+              reset({
+                name: "",
+                description: "",
+                price: "",
+                idCategoryFK: "",
+              });
+              refreshPage();
+            }}
+            // onClick={() =>
+            //   reset({ name: "", description: "", price: "", idCategoryFK: "" })
+            // }
+            className="btn-crud"
+          >
             Borrar
           </button>
         </form>

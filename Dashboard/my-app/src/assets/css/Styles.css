@@ -5,33 +5,37 @@ html, body {
     background-color: black;
     font-family: 'Monoton', cursive;
 }
-.contenedorData{
+
+.contenedorData {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 600px;
+    flex-wrap: nowrap;
 }
 .mainContainer{
     width: 80%;
-    height: 700px;
+    height: 368px;
     background-color: black;
 }
-.sidebar{
-    width: 20%;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-color: black;
 
+.sidebar {
+    display: flex;
+    background-color: black;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
 }
+
 .sidebar li{
+    font-size: 55%;
     list-style: none;
     text-align: center;
-    padding: 10px;
+    padding: 3px;
     text-transform: uppercase;
-    margin-top: 15%;
+    margin-top: 3%;
 }
 .sidebar li span{
     color: white;
@@ -52,18 +56,19 @@ HEADER HEADER HEADER HEADER */
 .Header {
     display: flex;
     align-items: center;
-    margin: 5px;
-    padding-left: 10px;
-    padding-right: 20px;
+    /* margin: 5px; */
+    /* padding-left: 10px; */
+    /* padding-right: 20px; */
     color: white;
+    height: -moz-fit-content;
     height: fit-content;
+}
 
-}  
 .Header h2 {
     padding-left: 10px;
     text-transform: uppercase;
     font-weight: 200;
-    font-size: 60px;
+    font-size: 9vw;
     text-align: center;
     text-shadow: 0 0 0 transparent,
                 0 0 10px #ff003c,
@@ -72,7 +77,6 @@ HEADER HEADER HEADER HEADER */
                 0 0 100px #ff003c,
                 0 0 200px #ff003c;
     animation: animate 3s infinite alternate;    
-
 }
 
 @keyframes animate{
@@ -138,14 +142,17 @@ TOTAL CATEGORIAS, TOTAL PRODUCTOS Y TOTAL USUARIOS
 .contenedorSmallCard:hover{
     box-shadow: 0 0 0 4px lightcoral;
 }
+
 .tituloSmallCard{
     width: 45%;
     text-align: center;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     margin-left: 13px;
     color: white;
     font-weight: 100;
+    font-size: 1.8vw;
 }
+
 .contenidoSmallCard{
     width: 45%;
     text-align: center;
@@ -186,7 +193,7 @@ PRODUCTOS PRODUCTOS PRODUCTOS */
     align-items:flex-start;
     width: 100%;
     height: 220px;
-    font-size: 20px;
+    font-size: 4vw;
     padding: 30px;
     margin-top: 10px;
     color: white;
@@ -195,7 +202,7 @@ PRODUCTOS PRODUCTOS PRODUCTOS */
     padding-left: 10px;
     text-transform: uppercase;
     font-weight: 200;
-    font-size: 60px;
+    font-size: 13vw;
     text-align: center;
     text-shadow: 0 0 0 transparent,
                 0 0 10px #77dd77,
@@ -213,39 +220,48 @@ CATEGORIAS CATEGORIAS CATEGORIAS CATEGORIAS
 CATEGORIAS CATEGORIAS CATEGORIAS CATEGORIAS */
 
 .dataCategorias{
-    width: 80%;
     text-align: center;
     text-transform: uppercase;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
+
 .categoriasSmallCard{
     padding: 30px;
     background-color: blue;
 }
+
 .divTotalCategorias{
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    margin-top: -100px;
+    flex-direction: column;
+    align-items: center;
 }
+
 .divPorCategoria{
-    width: 50%;
+    /* width: 50%;
     padding: 20px;
     margin: 100px;
-    margin-top: 13%;
+    margin-top: 13%; */
 }
+
 .divPieChart{
     padding: 20px;
-    width: 50%;
+    /* width: 50%; */
 }
+
 .pieChart{
-    width: 600px;
+    /* width: 600px; */
 }
+
 .listadoPorCatTitulo{
     padding-left: 10px;
     text-transform: uppercase;
     font-weight: 200;
-    font-size: 60px;
+    font-size: 10vw;
     text-align: center;
     text-shadow: 0 0 0 transparent,
                 0 0 10px #fdfd96,
@@ -261,15 +277,16 @@ ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS
 ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS */
 
 .dataUltimos{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
 }
 .contenedorLastProduct, .contenedorLastUser{
-    width: 50%;
-    padding: 80px;
-    margin: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .lastImg img{
     width: 100px;
@@ -328,9 +345,22 @@ ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS */
     transition: all 1s;
 }
 
+.crud {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .crudCrear {
     display: flex;
     flex-direction: column;
+    justify-content: left;
+    width: 100%;
+}
+
+.crudCrear h1, p{
+    font-size: 110%;
 }
 
 .crudEditar {
@@ -350,63 +380,18 @@ ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS */
 .inputsCrud {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.inputsCrud h1 {
+    font-size: 7px;
 }
 
 .inputsCrud input, select {
     margin-top: 2px;
     margin-bottom: 2px;
+    width: 10px;
 }
-
-
-
-/* .prueba{
-
-    width: 1000px;
-    height: 700px;
-}
-.prueba::before{
-    content: '';
-    width: 150px;
-    height: 150px;
-    margin-left: 10px;
-    margin-top: 300px;
-    background: linear-gradient(#00ccff, #d400d4);
-    border-radius: 20px;
-    animation: animate2 4s linear infinite;
-}
-.prueba::after{
-    content: '';
-    position: absolute;
-    inset: 4px;
-    /* background: #0e1538; */
-    /* border-radius: 16px;
-} */
-/*@keyframes  animate2 {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.prueba h2{
-    color: #fff;
-    font-size: 10em;
-}
-.prueba2{
-    background-color: pink;
-}
- */
-
-/* .prueba::after{
-    content: "";
-    position: absolute;
-    background-color: #1c1b29;
-    height: 93%;
-    width: 93%;
-    top: 3,5%;
-    left: 3,5%;
-} */
 
 .crudCrear h1 {
     margin-top: 3px;
@@ -414,7 +399,8 @@ ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS */
 }
 
 .btn-crud {
-    width: 50%;
+    /* width: 20%;
+    font-size: 10%; */
 }
 
 #form-crud {
@@ -423,22 +409,239 @@ ULTIMAS ULTIMAS ULTIMAS ULTIMAS ULTIMAS */
 } 
 
 #form-crud p {
-    font-size: 13px;
-
+    font-size: 85%;
     margin: 0
 }
 
 #form-crud span {
     color: red;
-    font-size: 12px;
+    font-size: 40%;
     font-family: Arial, Helvetica, sans-serif;
+    height: 20px;
 }
 
 #form-crud input, select {
-    width: 70%;
+    width: 90%;
 }
 
 #form-crud button {
     width: 20%;
     align-items: center;
 }
+
+@media(min-width: 750px){
+    .contenedorData{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        height: 600px;
+    }
+
+    .mainContainer{
+        width: 80%;
+        height: 700px;
+        background-color: black;
+    }
+
+    .sidebar{
+        width: 11%;
+        height: 480px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: black;
+    }
+
+    .sidebar li{
+        list-style: none;
+        text-align: center;
+        padding: 10px;
+        text-transform: uppercase;
+        margin-top: 15%;
+        font-size: 0.9vw;
+    }
+
+    .sidebar li span{
+        color: white;
+    }
+
+    .sidebar li span:hover{
+        color: black;
+        transition: all 0.9s;
+    }
+
+    .sidebar li:hover{
+        background-color: white;
+        transition: all 1s;
+    }
+
+    .crudCrear {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        margin-left: 2%;
+        height: 50%;
+    }
+    
+    .crudEditar {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .crudEliminar {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .crudEliminar, .crudCrear, .crudEditar h1 {
+        color: whitesmoke;
+    }
+    
+    .inputsCrud {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .inputsCrud input, select {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .crudCrear h1 {
+    margin-top: 3px;
+    margin-bottom: 0px
+    }
+
+    .btn-crud {
+    width: 50%;
+    }
+
+    #form-crud {
+    display: flex;
+    justify-content: center;
+    } 
+
+    #form-crud p {
+        font-size: 13px;
+
+        margin: 0
+    }
+
+    #form-crud span {
+        color: red;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #form-crud input, select {
+        width: 70%;
+    }
+
+    #form-crud button {
+        width: 20%;
+        align-items: center;
+    }
+
+    .contenedorLastProduct, .contenedorLastUser {
+        width: 50%;
+        padding: 0px;
+        margin: 0%;
+    }
+
+    .dataUltimos {
+        width: 80%;
+    }
+
+    .listadoProductosTitulo {
+        font-size: 5vw;
+    }
+
+    .contenedorListado {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .listadoProductos {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: 40%;
+        font-size: 3vw;
+        padding: 30px;
+        margin-top: 10px;
+        color: white;
+    }
+
+    .dataHome {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .Header h2 {
+        font-size: 7vw;
+    }
+
+    .listadoPorCatTitulo {
+        font-size: 6vw;
+    }
+
+    .dataCategorias {
+    width: 88%;
+    }
+
+    .divTotalCategorias {
+        flex-direction: row;
+    }
+}
+
+    
+
+/* 
+@media(min-width: 369px){
+    .contenedorData {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        flex-wrap: nowrap;
+    }
+
+    .sidebar {
+        display: flex;
+        background-color: black;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .sidebar li{
+
+        font-size: 100%;
+        list-style: none;
+        text-align: center;
+        padding: 3px;
+        text-transform: uppercase;
+        margin-top: 3%;
+    }
+    .sidebar li span{
+        color: white;
+    }
+    .sidebar li span:hover{
+        color: black;
+        transition: all 0.9s;
+    }
+    .sidebar li:hover{
+        background-color: white;
+        transition: all 1s;
+    }
+} */

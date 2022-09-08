@@ -6,7 +6,7 @@ import EditarProducto from "./EditarProducto";
 function Crud() {
   return (
     <React.Fragment>
-      <div>
+      <div className="crud">
         {/* CREAR PRODUCTO */}
         <CrearProducto />
 

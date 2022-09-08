@@ -57,8 +57,8 @@ function Sidebar() {
         <Route exact path="/" element={<Home />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/categorias" element={<Categorias />} />
-        <Route path="/ultimos" element={<Ultimos />} />
         <Route path="/crud" element={<Crud />} />
+        <Route path="/ultimos" element={<Ultimos />} />
       </Routes>
     </React.Fragment>
   );
